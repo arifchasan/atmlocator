@@ -11,6 +11,7 @@
 			var directionsDisplay;
 			var directionsService = new google.maps.DirectionsService();
 			var map;
+			var pos = 0;
 			document.addEventListener("deviceready", onDeviceReady, false);
 			
 			function onDeviceReady(){
@@ -37,7 +38,23 @@
 									'</table>';
 					$("#maincontent").html(content);
 					loading('hide');
+					
+					if(pos == 0){
+						navigator.notification.confirm(
+							'Do you really want to exit?',  // message
+							exitFromApp,              // callback to invoke with index of button pressed
+							'Exit',            // title
+							'Cancel,OK'         // buttonLabels
+						);
+					}
+					pos = 0;
 				}, false);
+			}
+			
+			function exitFromApp(buttonIndex) {
+				if (buttonIndex==2){
+					navigator.app.exitApp();
+				}
 			}
 			
 			function initialize(lat,lng, latend,lngend) {
@@ -66,6 +83,7 @@
 			}
 			
 			function bank(){
+				pos = 1;
 				var content = '<table border="0" cellpadding="0" cellspacing="0"  width="100%" height="100%">'+
 										'<tr>'+
 											'<td>&nbsp;</td>'+
@@ -96,6 +114,7 @@
 			}
 			
 			function quickfind(bank){
+				pos = 1;
 				loading('show');
 				var content = "";
 				$("#maincontent").html("");
@@ -133,6 +152,7 @@
 			}
 			
 			function news(){
+				pos = 1;
 				loading('show');
 				var content = "";
 				$.getJSON("http://locator.chasan.web.id/news.php?act=judul",function(data){
