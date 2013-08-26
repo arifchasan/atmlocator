@@ -14,7 +14,28 @@
 			document.addEventListener("deviceready", onDeviceReady, false);
 			
 			function onDeviceReady(){
-				alert("ondeviceready");
+				document.addEventListener("backbutton", function(){
+					var content = '<table border="0" cellpadding="0" cellspacing="0"  width="100%" height="100%">'+
+										'<tr>'+
+											'<td>&nbsp;</td>'+
+										'</tr>'+
+										'<tr>'+
+											'<td align="center" valign="middle"><img src="img/logo.png"></td>'+
+										'</tr>'+
+										'<tr>'+
+											'<td align="center" valign="bottom">'+
+												'<table border="0" cellpadding="0" cellspacing="0" width="308">'+
+													'<tr>'+
+														'<td onclick="bank()"><img name="logo_r1_c1" src="img/logo_r1_c1.png" width="100" height="83" border="0" id="logo_r1_c1" alt="" /></td>'+
+														'<td onclick="quickfind()"><img name="logo_r1_c2" src="img/logo_r1_c2.png" width="106" height="83" border="0" id="logo_r1_c2" alt="" /></td>'+
+														'<td onclick="news()"><img name="logo_r1_c3" src="img/logo_r1_c3.png" width="102" height="83" border="0" id="logo_r1_c3" alt="" /></td>'+
+														'<td><img src="img/spacer.gif" width="1" height="83" border="0" alt="" /></td>'+
+													'</tr>'+
+												'</table>'+
+											'</td>'+
+										'</tr>'+
+									'</table>';
+				}, false);
 			}
 			
 			function initialize(lat,lng, latend,lngend) {
@@ -105,7 +126,7 @@
 			<td align="center" valign="bottom">
 				<table border="0" cellpadding="0" cellspacing="0" width="308">
 					<tr>
-						<td onclick=""><img name="logo_r1_c1" src="img/logo_r1_c1.png" width="100" height="83" border="0" id="logo_r1_c1" alt="" /></td>
+						<td onclick="bank()"><img name="logo_r1_c1" src="img/logo_r1_c1.png" width="100" height="83" border="0" id="logo_r1_c1" alt="" /></td>
 						<td onclick="quickfind()"><img name="logo_r1_c2" src="img/logo_r1_c2.png" width="106" height="83" border="0" id="logo_r1_c2" alt="" /></td>
 						<td onclick="news()"><img name="logo_r1_c3" src="img/logo_r1_c3.png" width="102" height="83" border="0" id="logo_r1_c3" alt="" /></td>
 						<td><img src="img/spacer.gif" width="1" height="83" border="0" alt="" /></td>
