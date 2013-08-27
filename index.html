@@ -25,12 +25,13 @@
 										'</tr>'+
 										'<tr>'+
 											'<td align="center" valign="bottom">'+
-												'<table border="0" cellpadding="0" cellspacing="0" width="308">'+
+												'<table border="0" cellpadding="0" cellspacing="0" width="306">'+
 													'<tr>'+
-														'<td onclick="bank()"><img name="logo_r1_c1" src="img/logo_r1_c1.png" width="100" height="83" border="0" id="logo_r1_c1" alt="" /></td>'+
-														'<td onclick="quickfind(\'none\')"><img name="logo_r1_c2" src="img/logo_r1_c2.png" width="106" height="83" border="0" id="logo_r1_c2" alt="" /></td>'+
-														'<td onclick="news()"><img name="logo_r1_c3" src="img/logo_r1_c3.png" width="102" height="83" border="0" id="logo_r1_c3" alt="" /></td>'+
-														'<td><img src="img/spacer.gif" width="1" height="83" border="0" alt="" /></td>'+
+													   '<td onclick="bank()"><img name="menu_r1_c1" src="img/menu_r1_c1.png" width="77" height="70" border="0" id="menu_r1_c1" alt="" /></td>'+
+													   '<td onclick="quickfind(\'none\')"><img name="menu_r1_c2" src="img/menu_r1_c2.png" width="74" height="70" border="0" id="menu_r1_c2" alt="" /></td>'+
+													   '<td><img name="menu_r1_c3" src="img/menu_r1_c3.png" width="74" height="70" border="0" id="menu_r1_c3" alt="" /></td>'+
+													   '<td onclick="news()"><img name="menu_r1_c4" src="img/menu_r1_c4.png" width="81" height="70" border="0" id="menu_r1_c4" alt="" /></td>'+
+													   '<td><img src="spacer.png" width="1" height="70" border="0" alt="" /></td>'+
 													'</tr>'+
 												'</table>'+
 											'</td>'+
@@ -99,12 +100,13 @@
 										'</tr>'+
 										'<tr>'+
 											'<td align="center" valign="bottom">'+
-												'<table border="0" cellpadding="0" cellspacing="0" width="308">'+
+												'<table border="0" cellpadding="0" cellspacing="0" width="306">'+
 													'<tr>'+
-														'<td onclick="bank()"><img name="logo_r1_c1" src="img/logo_r1_c1.png" width="100" height="83" border="0" id="logo_r1_c1" alt="" /></td>'+
-														'<td onclick="quickfind(\'none\')"><img name="logo_r1_c2" src="img/logo_r1_c2.png" width="106" height="83" border="0" id="logo_r1_c2" alt="" /></td>'+
-														'<td onclick="news()"><img name="logo_r1_c3" src="img/logo_r1_c3.png" width="102" height="83" border="0" id="logo_r1_c3" alt="" /></td>'+
-														'<td><img src="img/spacer.gif" width="1" height="83" border="0" alt="" /></td>'+
+													   '<td onclick="bank()"><img name="menu_r1_c1" src="img/menu_r1_c1.png" width="77" height="70" border="0" id="menu_r1_c1" alt="" /></td>'+
+													   '<td onclick="quickfind(\'none\')"><img name="menu_r1_c2" src="img/menu_r1_c2.png" width="74" height="70" border="0" id="menu_r1_c2" alt="" /></td>'+
+													   '<td><img name="menu_r1_c3" src="img/menu_r1_c3.png" width="74" height="70" border="0" id="menu_r1_c3" alt="" /></td>'+
+													   '<td onclick="news()"><img name="menu_r1_c4" src="img/menu_r1_c4.png" width="81" height="70" border="0" id="menu_r1_c4" alt="" /></td>'+
+													   '<td><img src="spacer.png" width="1" height="70" border="0" alt="" /></td>'+
 													'</tr>'+
 												'</table>'+
 											'</td>'+
@@ -116,11 +118,11 @@
 			function quickfind(bank){
 				pos = 1;
 				loading('show');
-				var content = "";
-				$("#maincontent").html("");
 				if (navigator.geolocation){
 					navigator.geolocation.getCurrentPosition(function(position){
 						$.getJSON("http://locator.chasan.web.id/atm.php?lat="+position.coords.latitude+"&lng="+position.coords.longitude+"&bank="+bank,function(data){
+							var content = "";
+							$("#maincontent").html("");
 							content +=   '<table width="100%" height="100%" cellpadding="0" cellspacing="0">'+
 											'<tr>'+
 												'<td height="50%">'+
@@ -203,12 +205,13 @@
 		</tr>
 		<tr>
 			<td align="center" valign="bottom">
-				<table border="0" cellpadding="0" cellspacing="0" width="308">
+				<table border="0" cellpadding="0" cellspacing="0" width="306">
 					<tr>
-						<td onclick="bank()"><img name="logo_r1_c1" src="img/logo_r1_c1.png" width="100" height="83" border="0" id="logo_r1_c1" alt="" /></td>
-						<td onclick="quickfind('none')"><img name="logo_r1_c2" src="img/logo_r1_c2.png" width="106" height="83" border="0" id="logo_r1_c2" alt="" /></td>
-						<td onclick="news()"><img name="logo_r1_c3" src="img/logo_r1_c3.png" width="102" height="83" border="0" id="logo_r1_c3" alt="" /></td>
-						<td><img src="img/spacer.gif" width="1" height="83" border="0" alt="" /></td>
+					   <td onclick="bank()"><img name="menu_r1_c1" src="img/menu_r1_c1.png" width="77" height="70" border="0" id="menu_r1_c1" alt="" /></td>
+					   <td onclick="quickfind('none')"><img name="menu_r1_c2" src="img/menu_r1_c2.png" width="74" height="70" border="0" id="menu_r1_c2" alt="" /></td>
+					   <td><img name="menu_r1_c3" src="img/menu_r1_c3.png" width="74" height="70" border="0" id="menu_r1_c3" alt="" /></td>
+					   <td onclick="news()"><img name="menu_r1_c4" src="img/menu_r1_c4.png" width="81" height="70" border="0" id="menu_r1_c4" alt="" /></td>
+					   <td><img src="spacer.png" width="1" height="70" border="0" alt="" /></td>
 					</tr>
 				</table>
 			</td>
